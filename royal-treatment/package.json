@@ -2,11 +2,11 @@
     "name": "royal-treatment",
     "displayName": "Royal Treatment",
     "description": "A Destiny 2 Theme based on the Shader: Royal Treatment.",
-    "version": "0.0.1",
-    "publisher": "Arcane Eye",
+    "version": "0.0.2",
+    "publisher": "arcane-eye",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dendrobiummoniliforme/destiny-themes.git"
+        "url": "https://github.com/dendrobiummoniliforme/destiny-themes.git/royal-treatment"
     },
     "engines": {        
         "vscode": "^1.67.0"
