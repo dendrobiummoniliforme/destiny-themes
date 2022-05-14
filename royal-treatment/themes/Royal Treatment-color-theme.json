@@ -44,7 +44,7 @@
                 "invalid.illegal"
             ],
             "settings": {
-                "foreground": "#140639"
+                "foreground": "#749CB4"
             }
         },
         {
@@ -134,7 +134,7 @@
                 "keyword.other"
             ],
             "settings": {
-                "foreground": "#140639"
+                "foreground": "#749CB4"
             }
         },
         {
@@ -199,7 +199,7 @@
                 "variable.other.class.js"
             ],
             "settings": {
-                "foreground": "#140639"
+                "foreground": "#749CB4"
             }
         },
         {
@@ -238,7 +238,7 @@
                 "entity.other.attribute-name"
             ],
             "settings": {
-                "foreground": "#140D36"
+                "foreground": "#AE9B90"
             }
         },
         {
@@ -267,7 +267,7 @@
                 "source.sass keyword.control"
             ],
             "settings": {
-                "foreground": "#140639"
+                "foreground": "#749CB4"
             }
         },
         {
@@ -407,7 +407,7 @@
                 "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
             ],
             "settings": {
-                "foreground": "#140D36"
+                "foreground": "#AE9B90"
             }
         },
         {
@@ -435,7 +435,7 @@
                 "punctuation.definition.list_item.markdown"
             ],
             "settings": {
-                "foreground": "#140D36"
+                "foreground": "#AE9B90"
             }
         },
         {
@@ -500,7 +500,7 @@
             ],
             "settings": {
                 "fontStyle": "bold",
-                "foreground": "#140639"
+                "foreground": "#749CB4"
             }
         },
         {
@@ -537,7 +537,7 @@
                 "string.other.link.title.markdown"
             ],
             "settings": {
-                "foreground": "#140D36"
+                "foreground": "#AE9B90"
             }
         },
         {
@@ -582,7 +582,7 @@
                 "punctuation.definition.fenced.markdown"
             ],
             "settings": {
-                "foreground": "#140639"
+                "foreground": "#749CB4"
             }
         },
         {
