@@ -1,0 +1,21 @@
+{
+    "name": "royal-treatment",
+    "displayName": "Royal Treatment",
+    "description": "A Destiny 2 Theme based on the Shader: Royal Treatment.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Destiny 2: Royal Treatment",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Destiny 2 Royal Treatment-color-theme.json"
+            }
+        ]
+    }
+}
