@@ -1,13 +1,8 @@
-# README
-## Royal Treatment
+# Royal Treatment
 
 Hello! I'm glad you're checking out this theme. It is the first in a series that will be releasing centering on Destiny 2!
 
 This theme is specifically based off of the [Royal Treatment](https://d2.destinygamewiki.com/wiki/Royal_Treatment) theme.
-
-## Screenshot(s)
-
-![](image_1.png)
 
 ## Github Project
 
