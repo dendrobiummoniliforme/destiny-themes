@@ -1,13 +1,20 @@
 # README
-## This is the README for your extension "royal-treatment"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+## Royal Treatment
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+Hello! I'm glad you're checking out this theme. It is the first in a series that will be releasing centering on Destiny 2!
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+This theme is specifically based off of the [Royal Treatment](https://d2.destinygamewiki.com/wiki/Royal_Treatment) theme.
+
+## Screenshot(s)
+
+![](image_1.png)
+
+## Github Project
+
+Please visit [the Royal Treatment](https://github.com/dendrobiummoniliforme/destiny-themes/tree/main/royal-treatment) project.
+
+## Changelog
+
+SEE: [CHANGELOG.md](CHANGELOG.md)
 
 **Enjoy!**
