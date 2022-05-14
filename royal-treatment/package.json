@@ -1,8 +1,8 @@
 {
     "name": "royal-treatment",
     "displayName": "Royal Treatment",
-    "description": "A based on the Shader: Royal Treatment.",
-    "version": "0.0.9",
+    "description": "A theme based on the Shader: Royal Treatment.",
+    "version": "0.0.10",
     "publisher": "arcane-eye",
     "repository": {
         "type": "git",
@@ -14,7 +14,7 @@
     "categories": [
         "Themes"
     ],
-    "icon" : "default_icon_128.jpg",
+    "icon" : "default_icon_128.png",
     "contributes": {
         "themes": [
             {
