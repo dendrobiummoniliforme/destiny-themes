@@ -8,8 +8,4 @@ This theme is specifically based off of the [Royal Treatment](https://d2.destiny
 
 Please visit [the Royal Treatment](https://github.com/dendrobiummoniliforme/destiny-themes/tree/main/royal-treatment) project.
 
-## Changelog
-
-SEE: [CHANGELOG.md](CHANGELOG.md)
-
 **Enjoy!**
