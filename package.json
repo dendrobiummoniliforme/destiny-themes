@@ -1,8 +1,8 @@
 {
-    "name": "royal-treatment",
-    "displayName": "Royal Treatment",
-    "description": "A theme based on the Shader: Royal Treatment.",
-    "version": "0.0.12",
+    "name": "whisper-of-the-worm",
+    "displayName": "Whisper of the Worm",
+    "description": "Themes based on Destiny 2 Shaders.",
+    "version": "0.0.13",
     "publisher": "arcane-eye",
     "repository": {
         "type": "git",
