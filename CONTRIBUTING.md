@@ -28,6 +28,10 @@ For Creating A New Theme:
         * Update the `README.md/Current Themes` with your new theme name and link to the original shader.
         * Provide any details for your work that you would like to be included in the `CHANGELOG.md`.
 
+### theme.js
+This is a super hacky file. I put it together to speed up editing. I am taking any and all suggestions for how to handle the workflow :) If this file helps feel free to use!
+
+
 ## Resources
 These are some of the resources used to design each theme.
 
