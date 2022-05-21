@@ -30,7 +30,8 @@
   "homepage": "https://github.com/dendrobiummoniliforme/destiny-themes#readme",
   "main": "index.js",
   "scripts": {
-    "theme": "node $(pwd)/src/randomizeTheme.js"
+    "theme": "node $(pwd)/src/generateTheme.js",
+    "doc": "$(pwd)/node_modules/.bin/jsdoc2md $(pwd)/src/* > DOC.md"
   },
   "keywords": [
     "VSCode",
@@ -42,5 +43,9 @@
   ],
   "author": "dendrobiummoniliforme",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jsdoc": "^3.6.10",
+    "jsdoc-to-markdown": "^7.1.1"
+  }
 }
