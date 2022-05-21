@@ -1,15 +1,7 @@
 /**
  * Author: dendrobiumoniliforme.
- * Date: 2022, 05, 13.
- * This file is used to generate a theme based off of a provided swatches.theme file.
- * Simply 
- * 	1. Create a swatches.theme file in ./ of your theme's directory.
- * 		I) Example swatches.theme:
- * 			#344D6B
- *			#3F4C81
- *			#140D36
- *			#B3B2C0
- * 	2. run `npm run theme` while in theme editing mode.
+ * Date: 2022, 05, 21.
+ * This file is used to provide a random theme given an array of swatches, and number of swatches to use.
  */
 import * as ri from "./randomInt.js";
 
