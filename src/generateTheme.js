@@ -47,34 +47,37 @@ const getSwatches = (fileDirectory) => {
  * @returns An array of strings.
  */
 const removeSwatchHex = (swatches, swatchHex) => {
-    // Make editor.background unique.
+     // Make editor.background unique.
     // This _at least_ prevents text from landing on the same color as the background.
-    return swatches.map((entity) => {
-        if (entity != swatchHex) {
-            return entity;
+    const response = [];
+    for (let i = 0; i < swatches.length; i++) {
+        if (swatches[i] != swatchHex) {
+            response.push(swatches[i]);
         }
-    });
+    }
+    return response;
 }
 
 /**
  * @function getProcessedSwatches()
  * @description reads in the swatches file present in your src/ directory.
  * It then generates and extracts the background editor swatch from the swatches file.
+ * @param {string[]} swatches
+ * @param maxIntegerValue - The maximum number of values to use from the swatches array.
  * @returns An array of strings representing the swatches after processing out the backgroun editor hex.
  */
-export const getProcessedSwatches = () => {
+export const getProcessedSwatches = (swatches, maxIntegerValue) => {
     // 1. Get the swatches.
     // 2. Extract the background swatch from the original swatches array.
     // 3. Log the output.
-    const maxIntegerValue = swatches.length;
     const editorBackground = swatches[ri.getRandomInt(maxIntegerValue)];
-
     return removeSwatchHex(swatches, editorBackground);
 }
 
 const swatches = getSwatches(process.cwd() + "/src/swatches.theme");
+const maxIntegerValue = swatches.length;
 const processedSwatches = getProcessedSwatches(swatches);
-const theme = t.randomizeTheme(processedSwatches);
+const theme = t.randomizeTheme(processedSwatches, maxIntegerValue);
 
 // Log to stdout; this can be piped.
 log(theme);

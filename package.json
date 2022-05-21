@@ -43,9 +43,5 @@
   ],
   "author": "dendrobiummoniliforme",
   "license": "MIT",
-  "type": "module",
-  "devDependencies": {
-    "jsdoc": "^3.6.10",
-    "jsdoc-to-markdown": "^7.1.1"
-  }
+  "type": "module"
 }

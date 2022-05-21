@@ -5,8 +5,17 @@
  */
 import * as ri from "./randomInt.js";
 
+/**
+ * @function randomizeTheme
+ * @description Provides a VSCode theme with random color values
+ * based on the swatches array provided and the maxIntegervalue.
+ * @param {string[]} swatches 
+ * @param {number} maxIntegerValue - The maximum number of values to use from the swatches array.
+ * @returns a VSCode theme.
+ */
 export const randomizeTheme = (swatches, maxIntegerValue) => { 
-	return {
+	console.log(swatches);
+	const theme = {
 		"name": "Destiny 2: Royal Treatment",
 		"colors": {
 			"editor.background": swatches[ri.getRandomInt(maxIntegerValue)],
@@ -634,4 +643,5 @@ export const randomizeTheme = (swatches, maxIntegerValue) => {
 			}
 		]
 	}
+	return theme;
 }
