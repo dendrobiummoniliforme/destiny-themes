@@ -9,40 +9,21 @@
  *			#3F4C81
  *			#140D36
  *			#B3B2C0
- * 	2. run `node ~/theme.js > {colour_extension_name.json}` while in theme editing mode.
+ * 	2. run `node ~/src/randomized_theme.js > {colour_extension_name.json}` while in theme editing mode.
  */
-const fs = require('fs');
+import * as processSwatches from "./processSwatches.js";
+import * as log from "./log.js";
+import * as randomInt from "./randomInt.js"
 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-// 1. Set file for swatched and split into array.
-const swatchesDir = process.cwd() + "/swatches.theme";
-const swatchesRaw = fs.readFileSync(swatchesDir, 'utf8');
-const swatches = swatchesRaw.split('\n');
-
-// 2. Set max for randomInt.
-const max = swatches.length;
-
-// 3. Make editor.background unique.
-// This _at least_ prevents text from landing on the same color as the background.
-const editorBackground = swatches[getRandomInt(max)];
-swatches = swatches.map((entity) => {
-	if (entity != editorBackground) {
-		return entity;
-	}
-});
-
-// . Mutate.
+const swatches = processSwatches.get();
+const maxIntegerValue = swatches.length;
 const theme = {
 	"name": "Destiny 2: Royal Treatment",
 	"colors": {
-		"editor.background": swatches[getRandomInt(max)],
-		"editor.foreground": swatches[getRandomInt(max)],
-		"activityBarBadge.background": swatches[getRandomInt(max)],
-		"sideBarTitle.foreground": swatches[getRandomInt(max)],
+		"editor.background": swatches[randomInt.get(maxIntegerValue)],
+		"editor.foreground": swatches[randomInt.get(maxIntegerValue)],
+		"activityBarBadge.background": swatches[randomInt.get(maxIntegerValue)],
+		"sideBarTitle.foreground": swatches[randomInt.get(maxIntegerValue)],
 	},
 	"tokenColors": [
 		{
@@ -53,7 +34,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": swatches[getRandomInt(max)],
+				"foreground": swatches[randomInt.get(maxIntegerValue)],
 			}
 		},
 		{
@@ -63,7 +44,7 @@ const theme = {
 				"string constant.other.placeholder"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)],
+				"foreground": swatches[randomInt.get(maxIntegerValue)],
 			}
 		},
 		{
@@ -72,7 +53,7 @@ const theme = {
 				"constant.other.color"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)],
+				"foreground": swatches[randomInt.get(maxIntegerValue)],
 			}
 		},
 		{
@@ -82,7 +63,7 @@ const theme = {
 				"invalid.illegal"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -93,7 +74,7 @@ const theme = {
 				"storage.modifier"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -113,7 +94,7 @@ const theme = {
 				"keyword.other.substitution"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -124,7 +105,7 @@ const theme = {
 				"markup.deleted.git_gutter"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -137,7 +118,7 @@ const theme = {
 				"keyword.other.special-method"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -146,7 +127,7 @@ const theme = {
 				"meta.block variable.other"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -156,7 +137,7 @@ const theme = {
 				"string.other.link"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -172,7 +153,7 @@ const theme = {
 				"keyword.other"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -187,7 +168,7 @@ const theme = {
 				"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -203,7 +184,7 @@ const theme = {
 				"support.type.sys-types"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -212,7 +193,7 @@ const theme = {
 				"support.type"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -226,7 +207,7 @@ const theme = {
 				"source.postcss support.type.property-name"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -237,7 +218,7 @@ const theme = {
 				"variable.other.class.js"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -247,7 +228,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -257,7 +238,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -267,7 +248,7 @@ const theme = {
 				"variable.function.constructor"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -276,7 +257,7 @@ const theme = {
 				"entity.other.attribute-name"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -287,7 +268,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -296,7 +277,7 @@ const theme = {
 				"entity.other.attribute-name.class"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -305,7 +286,7 @@ const theme = {
 				"source.sass keyword.control"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -314,7 +295,7 @@ const theme = {
 				"markup.inserted"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -323,7 +304,7 @@ const theme = {
 				"markup.deleted"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -332,7 +313,7 @@ const theme = {
 				"markup.changed"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -341,7 +322,7 @@ const theme = {
 				"string.regexp"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -350,7 +331,7 @@ const theme = {
 				"constant.character.escape"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -372,7 +353,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -382,7 +363,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -391,7 +372,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -400,7 +381,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -409,7 +390,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -418,7 +399,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -427,7 +408,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -436,7 +417,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -445,7 +426,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -454,7 +435,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -463,7 +444,7 @@ const theme = {
 				"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -473,7 +454,7 @@ const theme = {
 				"punctuation.definition.list_item.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -482,7 +463,7 @@ const theme = {
 				"text.html.markdown markup.inline.raw.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -491,7 +472,7 @@ const theme = {
 				"text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -502,7 +483,7 @@ const theme = {
 				"markup.heading.markdown punctuation.definition.heading.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -512,7 +493,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -523,7 +504,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -538,7 +519,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -548,7 +529,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "underline",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -557,7 +538,7 @@ const theme = {
 				"markup.quote punctuation.definition.blockquote.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -575,7 +556,7 @@ const theme = {
 				"string.other.link.title.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -584,7 +565,7 @@ const theme = {
 				"string.other.link.description.title.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -593,7 +574,7 @@ const theme = {
 				"constant.other.reference.link.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -602,7 +583,7 @@ const theme = {
 				"markup.raw.block"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -611,7 +592,7 @@ const theme = {
 				"markup.raw.block.fenced.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -620,7 +601,7 @@ const theme = {
 				"punctuation.definition.fenced.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -631,7 +612,7 @@ const theme = {
 				"punctuation.section.class.end"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -640,7 +621,7 @@ const theme = {
 				"variable.language.fenced.markdown"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -650,7 +631,7 @@ const theme = {
 			],
 			"settings": {
 				"fontStyle": "bold",
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		},
 		{
@@ -659,13 +640,11 @@ const theme = {
 				"markup.table"
 			],
 			"settings": {
-				"foreground": swatches[getRandomInt(max)]
+				"foreground": swatches[randomInt.get(maxIntegerValue)]
 			}
 		}
 	]
 }
 
-// https://stackoverflow.com/questions/10729276/how-can-i-get-the-full-object-in-node-jss-console-log-rather-than-object
-console.log(
-    JSON.stringify(theme, null, 4)
-);
+// Log to stdout; this can be piped.
+log.print(theme);

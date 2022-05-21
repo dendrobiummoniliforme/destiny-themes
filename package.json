@@ -1,27 +1,46 @@
 {
-    "name": "whisper-of-the-worm",
-    "displayName": "Whisper of the Worm",
-    "description": "Themes based on Destiny 2 Shaders.",
-    "version": "0.0.13",
-    "publisher": "arcane-eye",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dendrobiummoniliforme/destiny-themes.git"
-    },
-    "engines": {        
-        "vscode": "^1.67.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "icon" : "default_icon_128.png",
-    "contributes": {
-        "themes": [
-            {
-                "label": "Royal Treatment",
-                "uiTheme": "vs-dark",
-                "path": "./themes/Royal Treatment-color-theme.json"
-            }
-        ]
-    }
+  "name": "whisper-of-the-worm",
+  "displayName": "Whisper of the Worm",
+  "description": "Themes based on Destiny 2 Shaders.",
+  "version": "0.0.13",
+  "publisher": "arcane-eye",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dendrobiummoniliforme/destiny-themes.git"
+  },
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "icon": "default_icon_128.png",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Royal Treatment",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Royal Treatment-color-theme.json"
+      }
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/dendrobiummoniliforme/destiny-themes/issues"
+  },
+  "homepage": "https://github.com/dendrobiummoniliforme/destiny-themes#readme",
+  "main": "index.js",
+  "scripts": {
+    "theme": "node $(pwd)/src/randomizeTheme.js"
+  },
+  "keywords": [
+    "VSCode",
+    "theme",
+    "color",
+    "fun",
+    "open",
+    "source"
+  ],
+  "author": "dendrobiummoniliforme",
+  "license": "MIT",
+  "type": "module"
 }
