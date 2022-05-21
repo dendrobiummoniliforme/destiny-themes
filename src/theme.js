@@ -1,5 +1,5 @@
 /**
- * Author: dendrobiumoniliforme.
+ * Author: dendrobiummoniliforme.
  * Date: 2022, 05, 21.
  * This file is used to provide a random theme given an array of swatches, and number of swatches to use.
  */
