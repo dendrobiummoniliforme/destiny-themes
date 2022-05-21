@@ -4,11 +4,15 @@ All notable changes to the "Whisper of the Worm" extension will be documented in
 
 ## [1.0.0]
 * Major Changes:
+    * Changed the name from "Royal Treatment" to "Whisper of the Worm".
+        * This is to make this repository a **general** store for all shaders that are transfered to VSCode themes.
+        * I also love this Exotic.
     * Altered the repository structure.
     * Added a CONTRIBUTING.
     * Added a README.
     * Added a LICENSE.
     * Added an Icon.
+    * Refactored theme generation tools.
 
 * A Note on other pre-1.0.0 changes:
     * From 0.0.4 onward I decided that rapid change was more favourable than structure.
