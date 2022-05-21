@@ -6,7 +6,11 @@
 
 ## Workflow
 
-For Creating A New Theme:
+Contributions are split into two:
+* adding new themes.
+* adding tools to help facilitate adding new themes.
+
+### For Creating A New Theme:
 
 1. Fork this repository.
 2. Open `swatches.theme`.
@@ -19,8 +23,8 @@ For Creating A New Theme:
     * This will open a new VSCode instance with this project.
     * Use this **new instance** to **preview color changes**.
     * Use the **original instance** to make **edits**.
-7. Run `node theme.js > themes/<NAME_OF_YOUR_NEW_THEME>.json`.
-    * Example `node theme.js > themes/Royal Treatment-color-theme.json`.
+7. Run `npm run theme > themes/<NAME_OF_YOUR_NEW_THEME>.json`.
+    * Example `npm run theme > themes/Royal Treatment-color-theme.json`.
     * This will take the values in `swatches.theme` and apply them to random parameters.
     * This is a good starting point, from here use your creative side to finalize the end look :)
 8. Once you are happy with your theme, submit your MR:
@@ -28,8 +32,8 @@ For Creating A New Theme:
         * Update the `README.md/Current Themes` with your new theme name and link to the original shader.
         * Provide any details for your work that you would like to be included in the `CHANGELOG.md`.
 
-### theme.js
-This is a super hacky file. I put it together to speed up editing. I am taking any and all suggestions for how to handle the workflow :) If this file helps feel free to use!
+### `src/*`
+This is a super hacky set of files. I put it together to speed up editing. I am taking any and all suggestions for how to handle the workflow :) If this file helps feel free to use!
 
 
 ## Resources
