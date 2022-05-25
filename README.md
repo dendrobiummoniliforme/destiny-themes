@@ -4,7 +4,7 @@ These are **Unofficial** themes created based on a specific shader from the vide
 
 ## Store Page
 
-* [Whisper of the Worm](https://marketplace.visualstudio.com/items?itemName=arcane-eye.whisper-of-the-worm)
+* [Whisper of the Worm](https://marketplace.visualstudio.com/items?itemName=arcane-eye.whisper-of-the-worm).
 
 ## Current Themes
 * [Royal Treatment](https://d2.destinygamewiki.com/wiki/Royal_Treatment).
