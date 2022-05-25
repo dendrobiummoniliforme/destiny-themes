@@ -23,8 +23,8 @@ Contributions are split into two:
     * This will open a new VSCode instance with this project.
     * Use this **new instance** to **preview color changes**.
     * Use the **original instance** to make **edits**.
-7. Run `npm run theme > themes/<NAME_OF_YOUR_NEW_THEME>.json`.
-    * Example `npm run theme > themes/Royal Treatment-color-theme.json`.
+7. Run `npm run --silent theme > "./themes/<NAME_OF_YOUR_NEW_THEME>.json"`.
+    * Example `npm run --silent theme > "./themes/Royal Dye-color-theme.json"`.
     * This will take the values in `swatches.theme` and apply them to random parameters.
     * This is a good starting point, from here use your creative side to finalize the end look :)
 8. Once you are happy with your theme, submit your MR:

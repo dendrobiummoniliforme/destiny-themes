@@ -2,7 +2,7 @@
   "name": "whisper-of-the-worm",
   "displayName": "Whisper of the Worm",
   "description": "Themes based on Destiny 2 Shaders.",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "publisher": "arcane-eye",
   "repository": {
     "type": "git",
@@ -21,6 +21,11 @@
         "label": "Royal Treatment",
         "uiTheme": "vs-dark",
         "path": "./themes/Royal Treatment-color-theme.json"
+      },
+      {
+        "label": "Royal Dye",
+        "uiTheme": "vs",
+        "path": "./themes/Royal Dye-color-theme.json"
       }
     ]
   },
@@ -29,8 +34,7 @@
   },
   "homepage": "https://github.com/dendrobiummoniliforme/destiny-themes#readme",
   "scripts": {
-    "theme": "node $(pwd)/src/generateTheme.js",
-    "doc": "$(pwd)/node_modules/.bin/jsdoc2md $(pwd)/src/* > DOC.md"
+    "theme": "node $(pwd)/src/generateTheme.js"
   },
   "keywords": [
     "VSCode",

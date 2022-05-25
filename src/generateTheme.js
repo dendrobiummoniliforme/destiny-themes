@@ -73,7 +73,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
     // TODO: Move this into a file, and override the values by name instead.
     // This is too bulky/interim of a format to continue.
 	const theme = {
-		"name": "Destiny 2: Royal Treatment",
+		"name": "",
 		"colors": {
 			"editor.background": editorBackground,
 			"editor.foreground": swatches[getRandomInt(maxIntegerValue)],
@@ -713,13 +713,13 @@ export const getRandomInt = (maxIntegerValue) => {
     return Math.floor(Math.random() * maxIntegerValue);
 }
 
-
 // Process
+// TODO: This needs an overhaul. It works, but I'd rather something a bit more modular.
 const swatches          = getSwatches(process.cwd() + "/src/swatches.theme");
-const maxIntegerValue   = swatches.length;
+const maxIntegerValue   = swatches.length - 1; // Index from 0.
 const editorBackground  = swatches[getRandomInt(maxIntegerValue)];
 const processedSwatches = removeSwatchHex(swatches, editorBackground);
-const theme             = randomizeTheme(processedSwatches, maxIntegerValue);
+const theme             = randomizeTheme(processedSwatches, maxIntegerValue, editorBackground);
 
 // Log to stdout; this can be piped.
 log(theme);

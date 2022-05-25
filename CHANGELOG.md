@@ -6,6 +6,8 @@ All notable changes to the "Whisper of the Worm" extension will be documented in
 * Major Changes:
     * Refactored `src/*` to `src/GenerateTheme.js`.
         * This consolidates the files. Modules are the right approach, but I would like to take some time to think about that approach.
+    * Added **Royal Dye** Theme.
+        * Swatches `#DCA39C, #F1BCB4, #F1EAF3, #D0C7D1, #C5C0C1, #CE7366, #A4885F, #5A411E, #573B1D, #515457, #1B1A19, and #161415`.
 
 ## [1.0.0]
 * Major Changes:
