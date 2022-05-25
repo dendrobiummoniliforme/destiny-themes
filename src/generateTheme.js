@@ -45,7 +45,7 @@ const getSwatches = (fileDirectory) => {
  * @returns An array of strings.
  */
 const removeSwatchHex = (swatches, swatchHex) => {
-     // Make editor.background unique.
+    // Make editor.background unique.
     // This _at least_ prevents text from landing on the same color as the background.
     const response = [];
     for (let i = 0; i < swatches.length; i++) {
@@ -76,9 +76,9 @@ const removeSwatchHex = (swatches, swatchHex) => {
 		"name": "Destiny 2: Royal Treatment",
 		"colors": {
 			"editor.background": editorBackground,
-			"editor.foreground": swatches[ri.getRandomInt(maxIntegerValue)],
-			"activityBarBadge.background": swatches[ri.getRandomInt(maxIntegerValue)],
-			"sideBarTitle.foreground": swatches[ri.getRandomInt(maxIntegerValue)],
+			"editor.foreground": swatches[getRandomInt(maxIntegerValue)],
+			"activityBarBadge.background": swatches[getRandomInt(maxIntegerValue)],
+			"sideBarTitle.foreground": swatches[getRandomInt(maxIntegerValue)],
 		},
 		"tokenColors": [
 			{
@@ -89,7 +89,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "italic",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)],
+					"foreground": swatches[getRandomInt(maxIntegerValue)],
 				}
 			},
 			{
@@ -99,7 +99,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"string constant.other.placeholder"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)],
+					"foreground": swatches[getRandomInt(maxIntegerValue)],
 				}
 			},
 			{
@@ -108,7 +108,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"constant.other.color"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)],
+					"foreground": swatches[getRandomInt(maxIntegerValue)],
 				}
 			},
 			{
@@ -118,7 +118,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"invalid.illegal"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -129,7 +129,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"storage.modifier"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -149,7 +149,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"keyword.other.substitution"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -160,7 +160,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.deleted.git_gutter"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -173,7 +173,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"keyword.other.special-method"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -182,7 +182,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"meta.block variable.other"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -192,7 +192,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"string.other.link"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -208,7 +208,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"keyword.other"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -223,7 +223,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -239,7 +239,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"support.type.sys-types"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -248,7 +248,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"support.type"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -262,7 +262,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.postcss support.type.property-name"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -273,7 +273,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"variable.other.class.js"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -283,7 +283,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "italic",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -293,7 +293,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "italic",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -303,7 +303,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"variable.function.constructor"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -312,7 +312,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"entity.other.attribute-name"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -323,7 +323,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "italic",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -332,7 +332,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"entity.other.attribute-name.class"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -341,7 +341,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.sass keyword.control"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -350,7 +350,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.inserted"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -359,7 +359,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.deleted"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -368,7 +368,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.changed"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -377,7 +377,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"string.regexp"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -386,7 +386,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"constant.character.escape"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -408,7 +408,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "italic",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -418,7 +418,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "italic",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -427,7 +427,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -436,7 +436,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -445,7 +445,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -454,7 +454,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -463,7 +463,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -472,7 +472,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -481,7 +481,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -490,7 +490,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -499,7 +499,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -509,7 +509,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"punctuation.definition.list_item.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -518,7 +518,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"text.html.markdown markup.inline.raw.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -527,7 +527,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -538,7 +538,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.heading.markdown punctuation.definition.heading.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -548,7 +548,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "italic",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -559,7 +559,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "bold",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -574,7 +574,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "bold",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -584,7 +584,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "underline",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -593,7 +593,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.quote punctuation.definition.blockquote.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -611,7 +611,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"string.other.link.title.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -620,7 +620,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"string.other.link.description.title.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -629,7 +629,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"constant.other.reference.link.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -638,7 +638,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.raw.block"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -647,7 +647,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.raw.block.fenced.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -656,7 +656,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"punctuation.definition.fenced.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -667,7 +667,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"punctuation.section.class.end"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -676,7 +676,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"variable.language.fenced.markdown"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -686,7 +686,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 				],
 				"settings": {
 					"fontStyle": "bold",
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			},
 			{
@@ -695,7 +695,7 @@ const removeSwatchHex = (swatches, swatchHex) => {
 					"markup.table"
 				],
 				"settings": {
-					"foreground": swatches[ri.getRandomInt(maxIntegerValue)]
+					"foreground": swatches[getRandomInt(maxIntegerValue)]
 				}
 			}
 		]
@@ -717,7 +717,7 @@ export const getRandomInt = (maxIntegerValue) => {
 // Process
 const swatches          = getSwatches(process.cwd() + "/src/swatches.theme");
 const maxIntegerValue   = swatches.length;
-const editorBackground  = swatches[ri.getRandomInt(maxIntegerValue)];
+const editorBackground  = swatches[getRandomInt(maxIntegerValue)];
 const processedSwatches = removeSwatchHex(swatches, editorBackground);
 const theme             = randomizeTheme(processedSwatches, maxIntegerValue);
 
