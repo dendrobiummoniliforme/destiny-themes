@@ -2,6 +2,11 @@
 
 All notable changes to the "Whisper of the Worm" extension will be documented in this file.
 
+## [2.0.0]
+* Major Changes:
+    * Refactored `src/*` to `src/GenerateTheme.js`.
+        * This consolidates the files. Modules are the right approach, but I would like to take some time to think about that approach.
+
 ## [1.0.0]
 * Major Changes:
     * Changed the name from "Royal Treatment" to "Whisper of the Worm".
