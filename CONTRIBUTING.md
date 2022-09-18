@@ -4,6 +4,15 @@
     * `nvm install`.
         * This will automatically use the `.nvmrc` file provided :)
 
+## Resources
+These are some of the resources used to design each theme.
+
+1. [VSCode Create Your Own Custom Theme](https://medium.com/wearelaika/vscode-create-your-own-custom-theme-extension-96c67bd753f6)
+2. [Pixlr](https://pixlr.com)
+3. [DevSwatch](https://apps.apple.com/us/app/devswatch/id1477857867?mt=12)
+4. [Shaders](https://d2.destinygamewiki.com/wiki/Shaders)
+5. [nvm](https://github.com/nvm-sh/nvm)
+
 ## Workflow
 
 Contributions are split into two:
@@ -35,12 +44,16 @@ Contributions are split into two:
 ### `src/*`
 This is a super hacky set of files. I put it together to speed up editing. I am taking any and all suggestions for how to handle the workflow :) If this file helps feel free to use!
 
+## Publishing
+This is currently handled by me. I want it accessible however. The steps taken are listed below.
 
-## Resources
-These are some of the resources used to design each theme.
-
-1. [VSCode Create Your Own Custom Theme](https://medium.com/wearelaika/vscode-create-your-own-custom-theme-extension-96c67bd753f6)
-2. [Pixlr](https://pixlr.com)
-3. [DevSwatch](https://apps.apple.com/us/app/devswatch/id1477857867?mt=12)
-4. [Shaders](https://d2.destinygamewiki.com/wiki/Shaders)
-5. [nvm](https://github.com/nvm-sh/nvm)
+1. Increment package.json version.
+2. `git push`.
+3. Tag and Release in format `<tag> - <date of release>`.
+    * Tag MUST match the package.json version.
+    * `[CHANGELOG](./CHANGELOG.md]`.
+4. Update `CHANGELOG.md` with
+    * Major Details.
+    * Non-Major Details.
+5. `vsce package`.
+6. `vsce publish`.
