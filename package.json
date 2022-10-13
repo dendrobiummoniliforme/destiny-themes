@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/dendrobiummoniliforme/destiny-themes#readme",
   "scripts": {
-    "theme": "node $(pwd)/src/generateTheme.js"
+    "theme": "node $(pwd)/src/Generate.js"
   },
   "keywords": [
     "VSCode",
