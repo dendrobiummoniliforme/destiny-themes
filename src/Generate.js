@@ -1,4 +1,4 @@
-**
+/**
  * @author dendrobiummoniliforme.
  * @since 2022, 05, 13.
  * @description This file is used to generate a theme based off of a provided swatches.theme file.
