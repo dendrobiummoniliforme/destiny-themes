@@ -46,5 +46,8 @@
   ],
   "author": "dendrobiummoniliforme",
   "license": "MIT",
-  "type": "module" 
+  "type": "module",
+  "dependencies": {
+    "node-vibrant": "^3.2.1-alpha.1"
+  }
 }
