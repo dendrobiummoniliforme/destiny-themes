@@ -9,6 +9,7 @@ import { randomizeTheme, removeSwatchHex, getPaletteFromImage, getRGBSwatchesFro
 import { getRandomInt } from "./Math.js";
 import { log } from "./Log.js";
 import * as fs from "fs";
+import { exit } from "process";
 
 /**
  * Simple CLI.
@@ -18,14 +19,17 @@ const argv = process.argv;
 const path = argv[2];
 
 // Guard clauses.
-if (argv.length > 3) {
+if (argv.length > 3 || argv.length <= 2) {
     log(`${defaultLog}: Expecting 1 argument.`);
+    exit(1);
 }
 if (typeof path !== 'string') {
     log(`${defaultLog}: Expecting a String (path).`);
+    exit(2);
 }
 if (fs.existsSync(path) !== true) {
     log(`${defaultLog}: File does not exist.`);
+    exit(3);
 }
 
 /**
@@ -33,8 +37,10 @@ if (fs.existsSync(path) !== true) {
  */
 const palette = await getPaletteFromImage(path);
 const swatches = getRGBSwatchesFromPalette(palette);
+// Convert RGB to Hex.
+const maxIntegerValue = swatches.length - 1; // Index from 0.
 
-// const maxIntegerValue = swatches.length - 1; // Index from 0.
+
 // const editorBackground = swatches[getRandomInt(maxIntegerValue)];
 // const processedSwatches = removeSwatchHex(swatches, editorBackground);
 // const generatedTheme = randomizeTheme(processedSwatches, maxIntegerValue, editorBackground);

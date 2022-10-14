@@ -10,3 +10,12 @@ export const log = (value) => {
     );
 }
 
+/**
+ * 
+ * @param {*} value 
+ */
+export const error = (value) => {
+    throw new Error(
+        JSON.stringify(value, null, 4)
+    );
+}
