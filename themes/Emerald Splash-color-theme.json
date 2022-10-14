@@ -1,7 +1,7 @@
 {
     "name": "",
     "colors": {
-        "editor.background": "#747B66",
+        "editor.background": "#f7fff7",
         "editor.foreground": "#9EC0B5",
         "activityBarBadge.background": "#5B642B",
         "sideBarTitle.foreground": "#BCC593"
