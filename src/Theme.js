@@ -42,19 +42,23 @@ export const getRGBSwatchesFromPalette = (palette) => {
  * @returns hex.
  */
 export const getHexFromRGB = (rgb) => {
-    const hexValues = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, "A", "B", "C", "D", "E"];
+    const hexValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E"];
     const hexEntities = rgb.map((entity) => {
+        // [220, 20, 60] -> [DC, 14, 3C].
         const elements = entity.map((element) => {
-            const hex = Math.floor(element) / 16;
+            const hex = Math.floor(element) / 16; // node-vibrant has decimal output for some rgb values.
             const flooredValue = Math.floor(hex);
             const remainder = hex - flooredValue;
             const remainderHex = remainder * 16;
+
+            // This works because hex values happen to index from 0.
+            // Ie. hexValues[0] = 0 and hexValues[14] = "E".
             return `${hexValues[flooredValue]}${hexValues[remainderHex]}`;
         });
 
-        // TODO: I should have gone with TypeScript.
         const elementsTransform = Array.from(elements);
 
+        // [DC, 14, 3C] -> "#DC143C".
         const reduce = elementsTransform.reduce((previousValue, currentValue) => {
             return `${previousValue}${currentValue}`;
         });

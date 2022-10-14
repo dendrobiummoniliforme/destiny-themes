@@ -22,19 +22,28 @@ Contributions are split into two:
 ### For Creating A New Theme:
 
 1. Fork this repository.
-2. Open `swatches.theme`.
-    * This is a file used in an auto-generation process for the new theme.
-3. Using a tool of choice, select a few RGB hex values from the [Destiny 2 Shaders List](https://d2.destinygamewiki.com/wiki/Shaders).
-4. Save the shader in the `~/.ignore` folder of this repo.
-5. Open this project in VSCode.
-6. Press the F5 key.
+2. Download a shader from [Destiny 2 Shaders List](https://d2.destinygamewiki.com/wiki/Shaders).
+3. Save the shader in the `~/.ignore` folder of this repo.
+4. Open this project in VSCode.
+5. Press the F5 key.
     * This will open a new VSCode instance with this project.
     * Use this **new instance** to **preview color changes**.
     * Use the **original instance** to make **edits**.
-7. Run `npm run --silent theme > "./themes/<NAME_OF_YOUR_NEW_THEME>.json"`.
-    * Example `npm run --silent theme > "./themes/Royal Dye-color-theme.json"`.
-    * This will take the values in `swatches.theme` and apply them to random parameters.
+6. Run `npm run --silent theme -- "./src/.ignore/<NAME_OF_SHADER>.png|jpg|etc." > "./themes/<NAME_OF_YOUR_NEW_THEME>-color-theme.json"`.
+    * Example `npm run theme --silent -- "./src/.ignore/Emerald_splash_icon1.jpg" > "./themes/Emerald Splash-color-theme.json"`.
+    * This will take the values from `Emerald_splash_icon1.jpg` and apply them to random parameters.
+    * It will then write to a file of the same name. This requires intentional naming at the moment. I am looking into using `make` to automate this.
     * This is a good starting point, from here use your creative side to finalize the end look :)
+     * Update `package.json` to include
+    ```json
+      {
+        "label": "<NAME_OF_COLOR_THEME>",
+        "uiTheme": "<UI_STYLE>", // vs-dark | vs
+        "path": "./themes/'<NAME_OF_COLOR_THEME>'-color-theme.json"
+      },
+    ```
+7. In the new instance that you opened earlier
+    * Open Colour Preferences, `cmd+shift+p` (on macOS) -> Colour Preferences -> `<NAME_OF_YOUR_NEW_THEME>-color-theme.json`. This lets you preview the changes as you run the `theme` command.
 8. Once you are happy with your theme, submit your MR:
     * Requirements for MR:
         * Update the `README.md/Current Themes` with your new theme name and link to the original shader.
@@ -42,6 +51,12 @@ Contributions are split into two:
 
 ### `src/*`
 This is a super hacky set of files. I put it together to speed up editing. I am taking any and all suggestions for how to handle the workflow :) If this file helps feel free to use!
+
+Right now it is composed of:
+* `Log.js` - Logging related utility function(s).
+* `Math.js` - Math related utility function(s).
+* `Theme.js` - Theme related functions.
+* `Generate.js` - CLI + Pipeline; Entrypoint.
 
 ## Publishing
 This is currently handled by me. I want it accessible however. The steps taken are listed below.
