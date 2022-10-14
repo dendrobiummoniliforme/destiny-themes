@@ -9,6 +9,7 @@ These are **Unofficial** themes created based on a specific shader from the vide
 ## Current Themes
 * [Royal Treatment](https://d2.destinygamewiki.com/wiki/Royal_Treatment).
 * [Royal Dye](https://d2.destinygamewiki.com/wiki/Royal_Dye).
+* [Emerald Splash](https://d2.destinygamewiki.com/wiki/Emerald_Splash).
 
 ## Contributing
 * We welcome any and all contributions :) 
