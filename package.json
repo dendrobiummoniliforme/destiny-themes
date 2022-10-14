@@ -28,9 +28,9 @@
         "path": "./themes/Royal Dye-color-theme.json"
       },
       {
-        "label": "Dusted Tome",
+        "label": "Emerald Splash",
         "uiTheme": "vs",
-        "path": "./themes/Dusted Tome-color-theme.json"
+        "path": "./themes/Emerald Splash-color-theme.json"
       }
     ]
   },
