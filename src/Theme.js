@@ -1,21 +1,75 @@
-import * as fs from 'fs';
-import { log } from './Debug.js';
 import { getRandomInt } from './Math.js';
+import Vibrant from "node-vibrant"; // https://github.com/Vibrant-Colors/node-vibrant/issues/127
+import { log } from "./Log.js";
 
 /**
- * @function getSwatches()
- * @description Sets the file for swatches and splits it into an array.
- * @param string fileDirectory 
- * @returns An array of strings.
+ * @description gets a palette from an image.
+ * @param string path, a path to an image file on your local machine.
+ * @returns a Palette.
  */
-export const getSwatches = (fileDirectory) => {
-    return (fs.readFileSync(fileDirectory, 'utf8')).split('\n');
+export const getPaletteFromImage = async (path) => {
+    const vibrant = new Vibrant(path);
+    return await vibrant.getPalette((error, palette) => {
+        if (error) {
+            log(error);
+            return;
+        }
+        return palette;
+    });
 }
 
 /**
- * @function removeSwatchHex()
+ * @description takes in a Palette Object and converts it to an array of RGB swatches.
+ * @param Palette, a palette. 
+ * @returns swatches.
+ * @example goes from 
+ * {"Vibrant": { "rgb": [ 95, 57, 192], "population": 24, }}
+ * to [95,57,192],
+ */
+export const getRGBSwatchesFromPalette = (palette) => {
+    let swatches = [];
+    const transform = new Map(Object.entries(palette));
+    transform.forEach((entity) => {
+        swatches.push((entity.rgb));
+    });
+    return swatches;
+}
+
+/**
+ * @description Given an array of rgb values, transform it into it's hex.
+ * @param array[rgbEntities] rgb array, example: [[123], [12], [3]].
+ * @see https://www.developintelligence.com/blog/2017/02/rgb-to-hex-understanding-the-major-web-color-codes/
+ * @returns hex.
+ */
+export const getHexFromRGB = (rgb) => {
+    const hexValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E"];
+    const hexEntities = rgb.map((entity) => {
+        // [220, 20, 60] -> [DC, 14, 3C].
+        const elements = entity.map((element) => {
+            const hex = Math.floor(element) / 16; // node-vibrant has decimal output for some rgb values.
+            const flooredValue = Math.floor(hex);
+            const remainder = hex - flooredValue;
+            const remainderHex = remainder * 16;
+
+            // This works because hex values happen to index from 0.
+            // Ie. hexValues[0] = 0 and hexValues[14] = "E".
+            return `${hexValues[flooredValue]}${hexValues[remainderHex]}`;
+        });
+
+        const elementsTransform = Array.from(elements);
+
+        // [DC, 14, 3C] -> "#DC143C".
+        const reduce = elementsTransform.reduce((previousValue, currentValue) => {
+            return `${previousValue}${currentValue}`;
+        });
+        return `#${reduce}`;
+    });
+    return(hexEntities);
+}
+
+/**
  * @description removes the swatch that is set 
- * for the editor background from the swatches array.
+ * from the swatches array.
  * @param string[] swatches 
  * @param string swatchHex 
  * @returns An array of strings.
@@ -33,7 +87,6 @@ export const removeSwatchHex = (swatches, swatchHex) => {
 }
 
 /**
- * @function randomizeTheme
  * @description Provides a VSCode theme with random color values
  * based on the swatches array provided and the maxIntegervalue.
  * @param string[] swatches, the provided swatches for random generation.
