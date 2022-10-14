@@ -725,7 +725,3 @@ export const removeSwatchHex = (swatches, swatchHex) => {
     }
     return theme;
 }
-
-export const saveThemeToFile = (theme) => {
-
-}
