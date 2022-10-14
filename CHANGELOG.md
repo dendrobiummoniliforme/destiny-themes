@@ -2,6 +2,13 @@
 
 All notable changes to the "Whisper of the Worm" extension will be documented in this file.
 
+## [3.0.0]
+* Major Changes:
+    * Update CONTRIBUTING.md with Publishing information.
+    * Refactor 1; split files into modules.
+    * Refactor 2 image color extraction automation pipeline
+    * Added Emerald Splash Theme.
+
 ## [2.0.0]
 * Major Changes:
     * Refactored `src/*` to `src/GenerateTheme.js`.
