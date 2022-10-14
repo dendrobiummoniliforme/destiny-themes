@@ -2,6 +2,11 @@
 
 All notable changes to the "Whisper of the Worm" extension will be documented in this file.
 
+## [4.0.0]
+* Major Changes:
+    * Update README.md.
+    * Patch main missing color theme.
+
 ## [3.0.0]
 * Major Changes:
     * Update CONTRIBUTING.md with Publishing information.
