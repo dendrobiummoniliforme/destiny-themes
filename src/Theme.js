@@ -1,19 +1,41 @@
-import * as fs from 'fs';
-import { log } from './Debug.js';
 import { getRandomInt } from './Math.js';
+import Vibrant from "node-vibrant"; // https://github.com/Vibrant-Colors/node-vibrant/issues/127
+import { log } from "./Log.js";
 
 /**
- * @function getSwatches()
- * @description Sets the file for swatches and splits it into an array.
- * @param string fileDirectory 
- * @returns An array of strings.
+ * @description gets a palette from an image.
+ * @param string path, a path to an image file on your local machine.
+ * @returns a Palette.
  */
-export const getSwatches = (fileDirectory) => {
-    return (fs.readFileSync(fileDirectory, 'utf8')).split('\n');
+export const getPaletteFromImage = async (path) => {
+    const vibrant = new Vibrant(path);
+    return await vibrant.getPalette((error, palette) => {
+        if (error) {
+            log(error);
+            return;
+        }
+        return palette;
+    });
 }
 
 /**
- * @function removeSwatchHex()
+ * @description takes in a Palette Object and converts it to swatches.
+ * @param Palette, a palette. 
+ * @returns swatches.
+ * @example goes from 
+ * {"Vibrant": { "rgb": [ 95, 57, 192], "population": 24, }}
+ * to [95,57,192],
+ */
+export const getRGBSwatchesFromPalette = (palette) => {
+    let swatches = [];
+    const transform = new Map(Object.entries(palette));
+    transform.forEach((entity) => {
+        swatches.push((entity.rgb));
+    });
+    return swatches;
+}
+
+/**
  * @description removes the swatch that is set 
  * for the editor background from the swatches array.
  * @param string[] swatches 
@@ -33,7 +55,6 @@ export const removeSwatchHex = (swatches, swatchHex) => {
 }
 
 /**
- * @function randomizeTheme
  * @description Provides a VSCode theme with random color values
  * based on the swatches array provided and the maxIntegervalue.
  * @param string[] swatches, the provided swatches for random generation.

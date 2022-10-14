@@ -1,5 +1,4 @@
 /**
- * @function log()
  * @description is a wrapper on console.log(). It is a utility for 
  * a common JSON display solution.
  * @param string value 
