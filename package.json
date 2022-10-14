@@ -26,6 +26,11 @@
         "label": "Royal Dye",
         "uiTheme": "vs",
         "path": "./themes/Royal Dye-color-theme.json"
+      },
+      {
+        "label": "Dusted Tome",
+        "uiTheme": "vs",
+        "path": "./themes/Dusted Tome-color-theme.json"
       }
     ]
   },
@@ -34,7 +39,7 @@
   },
   "homepage": "https://github.com/dendrobiummoniliforme/destiny-themes#readme",
   "scripts": {
-    "theme": "node $(pwd)/src/Generate.js"
+    "theme":  "node $(pwd)/src/Generate.js"
   },
   "keywords": [
     "VSCode",

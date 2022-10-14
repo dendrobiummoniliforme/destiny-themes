@@ -25,8 +25,7 @@ Contributions are split into two:
 2. Open `swatches.theme`.
     * This is a file used in an auto-generation process for the new theme.
 3. Using a tool of choice, select a few RGB hex values from the [Destiny 2 Shaders List](https://d2.destinygamewiki.com/wiki/Shaders).
-4. Save the shader values in the `swatches.theme` file.
-    * Overwrite the existing values; this is a temp file.
+4. Save the shader in the `~/.ignore` folder of this repo.
 5. Open this project in VSCode.
 6. Press the F5 key.
     * This will open a new VSCode instance with this project.

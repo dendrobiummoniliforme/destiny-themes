@@ -19,7 +19,7 @@ export const getPaletteFromImage = async (path) => {
 }
 
 /**
- * @description takes in a Palette Object and converts it to swatches.
+ * @description takes in a Palette Object and converts it to an array of RGB swatches.
  * @param Palette, a palette. 
  * @returns swatches.
  * @example goes from 
@@ -36,8 +36,36 @@ export const getRGBSwatchesFromPalette = (palette) => {
 }
 
 /**
+ * @description Given an array of rgb values, transform it into it's hex.
+ * @param array[rgbEntities] rgb array, example: [[123], [12], [3]].
+ * @see https://www.developintelligence.com/blog/2017/02/rgb-to-hex-understanding-the-major-web-color-codes/
+ * @returns hex.
+ */
+export const getHexFromRGB = (rgb) => {
+    const hexValues = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, "A", "B", "C", "D", "E"];
+    const hexEntities = rgb.map((entity) => {
+        const elements = entity.map((element) => {
+            const hex = Math.floor(element) / 16;
+            const flooredValue = Math.floor(hex);
+            const remainder = hex - flooredValue;
+            const remainderHex = remainder * 16;
+            return `${hexValues[flooredValue]}${hexValues[remainderHex]}`;
+        });
+
+        // TODO: I should have gone with TypeScript.
+        const elementsTransform = Array.from(elements);
+
+        const reduce = elementsTransform.reduce((previousValue, currentValue) => {
+            return `${previousValue}${currentValue}`;
+        });
+        return `#${reduce}`;
+    });
+    return(hexEntities);
+}
+
+/**
  * @description removes the swatch that is set 
- * for the editor background from the swatches array.
+ * from the swatches array.
  * @param string[] swatches 
  * @param string swatchHex 
  * @returns An array of strings.
@@ -692,4 +720,8 @@ export const removeSwatchHex = (swatches, swatchHex) => {
         ]
     }
     return theme;
+}
+
+export const saveThemeToFile = (theme) => {
+
 }
