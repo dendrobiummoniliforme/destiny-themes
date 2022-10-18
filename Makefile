@@ -4,8 +4,16 @@ major_tag := $(node Tag.js "major")
 minor_tag := $(node Tag.js "minor")
 patch_tag := $(node Tag.js "patch")
 
-deploy:
+deploy: deploy-git deploy-vs
+	echo "Current Tag $(current_tag)"
+	echo "Type $(type)"
+	echo "Deploying!"
+
+deploy-git: tag
 	git push --follow-tags
+
+deploy-vs:
+	vsce package
 
 get-tag:
 	echo $(current_tag);
