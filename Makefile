@@ -13,9 +13,6 @@ deploy: deploy-git deploy-vs
 deploy-git: tag
 	git push --follow-tags
 
-deploy-vs:
-	vsce package
-
 tag: set-tag
 	echo "Current Tag $(current_tag)"
 	git pull origin main && \
@@ -48,5 +45,5 @@ endif
 get-tag:
 	echo "get-tag $(current_tag)"
 
-
-
+deploy-vs:
+	vsce package
