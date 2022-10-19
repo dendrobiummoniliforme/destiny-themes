@@ -1,18 +1,18 @@
-time := $(shell date +"%T")
-current_tag := $(shell node Tag.js "get")
-current_branch := $(shell git branch | grep "* main")
-
+# Deploy to github and VS Code Marketplace
 deploy: deploy-git deploy-vs
 	echo "Current Tag $(current_tag)"
 	echo "Type $(type)"
 	echo "Deploying!"
 
+# Deploy to git
 deploy-git: tag
 	git push --follow-tags
 
+# Tag the current git branch
 tag: set-tag
-	git tag $(current_tag) -m "$(time)"
+	git tag $(shell node Tag.js "get") -m "$(shell date +"%T")"
 
+# Using Tag.js, set the package.json version value to value + 1.
 set-tag:
 ifeq ($(type),)
 	echo "Please provide a type major|minor|patch"
@@ -31,8 +31,6 @@ ifeq ($(type), patch)
 	node Tag.js "patch"
 endif
 
-get-tag:
-	echo "get-tag $(current_tag)"
-
+# Deploy to VS Code Marketplace
 deploy-vs:
 	vsce package
