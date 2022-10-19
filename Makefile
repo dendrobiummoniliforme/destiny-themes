@@ -6,6 +6,9 @@ deploy: deploy-git deploy-vs
 
 # Deploy to git
 deploy-git: tag
+	git add package.json
+	git commit -m "Updating version."
+	git push
 	git push --follow-tags
 
 # Tag the current git branch
