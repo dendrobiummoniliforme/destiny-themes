@@ -2,6 +2,10 @@ import * as fs from "fs";
 import { exit } from "process";
 import { log } from "./src/Log.js";
 
+/**
+ * Reads in package.json.
+ * @returns package.json encoded to JSON.
+ */
 const getPackageFile = () => {
     let file = {};
     file = JSON.parse(
@@ -16,10 +20,21 @@ const getPackageFile = () => {
     return file;
 }
 
+/**
+ * getter for our file's tag version value.
+ * @param json file 
+ * @returns 
+ */
 export const getTag = (file) => {
     return file.version;
 }
 
+/**
+ * Updates the current specified value in our tag.
+ * @param string tag x -> x_n.y -> y_n.z -> z_n Ex. 1.0.0
+ * @param string type major|minor|patch
+ * @returns tag Ex. 1.0.1
+ */
 export const updateTag = (tag, type) => {
     const tags = tag.split(".")
     switch(type) {
@@ -36,6 +51,12 @@ export const updateTag = (tag, type) => {
     return tags.join(".");
 }
 
+/**
+ * 
+ * @param json file 
+ * @param {string} tag x -> x_n.y -> y_n.z -> z_n Ex. 1.0.0
+ * @returns file
+ */
 export const setTag = (file, tag) => {
     // See https://stackoverflow.com/questions/41510186/cannot-create-property-on-string
     return {
@@ -44,6 +65,10 @@ export const setTag = (file, tag) => {
     };
 }
 
+/**
+ * Writes file to drive.
+ * @param json file 
+ */
 export const setPackageFile = (file) => {
     fs.writeFileSync("./package.json", JSON.stringify(file, null, 2));
 }
